@@ -1918,7 +1918,8 @@ class CalendarObjectResource(DAVObject):
             ):
                 if isinstance(x, cl):
                     return x
-        error.assert_(False)
+
+        log.info('Event, Journal, Todo, FreeBusy not found in icalendar class')
 
     def _set_icalendar_component(self, value):
         s = self.icalendar_instance.subcomponents
